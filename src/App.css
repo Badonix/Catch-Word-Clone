@@ -70,3 +70,69 @@
   scale: 1.1;
   color: red !important;
 }
+
+.main-cont {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-div {
+  width: 80%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid black;
+  padding: 50px;
+  flex-direction: column;
+  animation: ease-in 2s slide-in;
+}
+.main-div button {
+  margin-top: 100px;
+  width: 300px;
+  height: 50px;
+  border: 3px solid black;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 30px;
+  transition: 0.3s;
+  margin-bottom: 50px;
+}
+.main-div button:hover {
+  background-color: rgb(190, 189, 189);
+}
+
+.noPage {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.noPage button {
+  width: 300px;
+  border: 2px solid black;
+  font-size: 20px;
+  transition: 0.3s;
+  cursor: pointer;
+  padding: 15px;
+}
+.noPage button:hover {
+  background-color: rgb(189, 186, 186);
+}
+
+@keyframes slide-in {
+  0% {
+    scale: 0;
+    transform: trnaslateY(-100px);
+    rotate: -180deg;
+  }
+  100% {
+    scale: 1;
+    transform: trnaslateY(0);
+    rotate: 0;
+  }
+}
