@@ -9,6 +9,16 @@ function NoPage() {
       <Link to="/">
         <button>Return to Menu</button>
       </Link>
+      <div className="footer">
+        <p>
+          Made By <span className="name">Badonix</span>{" "}
+          <span className="jort">
+            <a target={"_blank"} href="https://www.youtube.com/@Jortsoft">
+              © JortSoft
+            </a>
+          </span>
+        </p>
+      </div>
     </div>
   );
 }

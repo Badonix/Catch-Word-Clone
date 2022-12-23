@@ -1,18 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../App.css";
-
-function Home() {
+import { useGlobalContext } from "../context";
+function Result() {
+  const { currentScore } = useGlobalContext();
   return (
-    <div className="main-cont">
-      <div className="main-div">
-        <h1>Catch Word</h1>
+    <div className="result-cont">
+      <div className="result-div">
+        <h2>veri good! You got {currentScore} points</h2>
         <Link to="/play">
-          <button>PLAY!</button>
+          {" "}
+          <button>Play Again</button>
         </Link>
-        {localStorage.getItem("highest") && (
-          <h2>Highest Score: {localStorage.getItem("highest")}</h2>
-        )}
+        <Link to="/">
+          <button>Main Menu</button>
+        </Link>
       </div>
       <div className="footer">
         <p>
@@ -28,4 +29,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Result;
