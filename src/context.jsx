@@ -4,12 +4,17 @@ const AppContext = React.createContext();
 
 const AppProvider = ({ children }) => {
   const [currentScore, setCurrentScore] = useState(0);
-
+  const [leaderBoard, setLeaderBoard] = useState([]);
+  const [username, setUsername] = useState("");
   return (
     <AppContext.Provider
       value={{
         currentScore,
         setCurrentScore,
+        setLeaderBoard,
+        leaderBoard,
+        username,
+        setUsername,
       }}
     >
       {children}

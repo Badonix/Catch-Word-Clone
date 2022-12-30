@@ -24,10 +24,10 @@ function App() {
     setCurrentScore(score);
     if (localStorage.getItem("highest")) {
       if (localStorage.getItem("highest") < score) {
-        localStorage.setItem("highest", score);
+        // Scores.findByIdAndUpdate(localStorage.getItem("uid"), { Score: score }, callback)
       }
     } else {
-      localStorage.setItem("highest", score);
+      // Scores.findByIdAndUpdate(localStorage.getItem("uid"), { Score: score }, callback)
     }
   }, [score]);
 

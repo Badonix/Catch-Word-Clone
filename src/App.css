@@ -1,9 +1,14 @@
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "Press Start 2P", cursive;
+  font-family: "Poppins", sans-serif;
   text-align: center;
+}
+button {
+  vertical-align: middle;
+  line-height: 30px;
 }
 a {
   text-decoration: none;
@@ -88,9 +93,15 @@ a {
   flex-direction: column;
   animation: ease-in 2s slide-in;
 }
-.main-div button {
+.main-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin-top: 100px;
-  width: 300px;
+}
+.main-div button {
+  width: auto;
   height: 50px;
   border: 3px solid black;
   cursor: pointer;
@@ -161,6 +172,64 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+.leaderboard-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.leaderboard-cont {
+  width: 80%;
+  padding: 50px 0;
+  border: 4px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
+}
+.leaderboard-cont h2 {
+  font-size: 35px;
+}
+.leaderboard-users {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.leaderboard-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  width: 70%;
+  margin: 0 auto;
+  border: 2px solid black;
+}
+
+.leaderboard-cont button {
+  width: 500px;
+  margin: 0 auto;
+  border: 2px solid black;
+  font-size: 30px;
+  transition: 0.3s;
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 10px;
+}
+.leaderboard-cont button:hover {
+  background-color: rgb(189, 186, 186);
+}
+
+.noPage input {
+  width: 300px;
+  height: 35px;
+  font-size: 25px;
+  border: 1px solid black;
+  outline: none;
+  padding: 5px;
+}
+
 @media (max-width: 553px) {
   .main-div,
   .result-div {
@@ -168,9 +237,9 @@ a {
   }
   .result-div button,
   .main-div button {
-    width: 90%;
+    /* width: 90%;
     font-size: 20px;
-    line-height: 20px;
+    line-height: 20px; */
   }
 }
 @media (max-width: 718px) {
@@ -187,6 +256,19 @@ a {
     font-size: 18px !important;
   }
 }
+@media (max-width: 950px) {
+  .leaderboard-cont button {
+    margin-top: 30px;
+    width: 200px;
+  }
+  .leaderboard-cont h2 {
+    margin-top: 20px;
+  }
+  section {
+    padding: 20px;
+  }
+}
+
 .footer {
   position: absolute;
   bottom: 20px;
