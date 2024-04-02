@@ -4,13 +4,12 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context";
 function LeaderBoard() {
-  const { setLeaderBoard, leaderBoard } = useGlobalContext();
-  const baseURL = "http://127.0.0.1:1331/api/scores/top";
+  const { setLeaderBoard, leaderBoard, baseURL } = useGlobalContext();
+  const url = `${baseURL}/api/scores/top`;
 
   useEffect(() => {
-    axios.get(baseURL).then((response) => {
+    axios.get(url).then((response) => {
       setLeaderBoard(response.data);
-      console.log("response");
     });
   }, []);
   return (
@@ -28,9 +27,9 @@ function LeaderBoard() {
             );
           })}
         </div>
-        <button>
-          <Link to="/">Back</Link>
-        </button>
+        <Link to="/">
+          <button>Back</button>
+        </Link>
       </div>
     </section>
   );

@@ -6,6 +6,7 @@ const AppProvider = ({ children }) => {
   const [currentScore, setCurrentScore] = useState(0);
   const [leaderBoard, setLeaderBoard] = useState([]);
   const [username, setUsername] = useState("");
+  const baseURL = "https://catchword-back-prod.vercel.app";
   return (
     <AppContext.Provider
       value={{
@@ -14,6 +15,7 @@ const AppProvider = ({ children }) => {
         setLeaderBoard,
         leaderBoard,
         username,
+        baseURL,
         setUsername,
       }}
     >

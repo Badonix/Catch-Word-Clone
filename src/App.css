@@ -6,6 +6,15 @@
   font-family: "Poppins", sans-serif;
   text-align: center;
 }
+
+* {
+  border-radius: 5px;
+}
+
+body {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 button {
   vertical-align: middle;
   line-height: 30px;
@@ -131,6 +140,9 @@ a {
   transition: 0.3s;
   cursor: pointer;
   padding: 15px;
+}
+button {
+  background-color: white;
 }
 .noPage button:hover,
 .result-div button:hover {

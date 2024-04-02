@@ -7,13 +7,14 @@ import axios from "axios";
 import { useGlobalContext } from "../context";
 
 function Home() {
-  const baseURL = "http://localhost:1331/api/scores/";
+  const { baseURL } = useGlobalContext();
+  const url = `${baseURL}/api/scores/`;
   const navigate = useNavigate();
   useEffect(() => {
     if (!localStorage.getItem("uid")) {
       navigate("/newuser");
     }
-    axios.get(`${baseURL}${localStorage.getItem("uid")}`).then((response) => {
+    axios.get(`${url}${localStorage.getItem("uid")}`).then((response) => {
       localStorage.setItem("highest", response.data);
     });
   }, []);

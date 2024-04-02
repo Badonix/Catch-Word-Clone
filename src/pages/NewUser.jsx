@@ -6,7 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 function NewUser() {
   const navigate = useNavigate();
-  const { username, setUsername } = useGlobalContext();
+  const { username, setUsername, baseURL } = useGlobalContext();
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
   };
@@ -15,14 +15,12 @@ function NewUser() {
     if (username) {
       let score = { author: username, score: 0 };
       axios
-        .post("http://127.0.0.1:1331/api/scores", score)
+        .post(`${baseURL}/api/scores`, score)
         .then((response) => {
-          console.log(response);
           localStorage.setItem("uid", response.data._id);
           navigate("/");
         })
         .catch((error) => {
-          console.log(error.response.data);
           alert("Username is taken");
           return;
         });
